@@ -5,8 +5,8 @@
 2. Admin =>
         All Products    (Tanstack)
         All Orders      =||=
-        All Users   
-        Product Crud  
+        All Users       =||=
+        Product Crud
 
 3. User =>
         Profile

@@ -1,8 +1,10 @@
+import Routing from "./Routing"
+
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
+  return <>
+    <Routing />
+  </>
 }
 
 export default App

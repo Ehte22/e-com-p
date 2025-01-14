@@ -16,6 +16,7 @@ export interface FieldConfig {
     displayName?: string
     rows?: number
     cols?: number
+    errorClass: string;
     formArray?: FieldConfig[],
     formGroup?: {
         [key: string]: {
@@ -126,7 +127,7 @@ const DynamicForm = <T extends FieldValues>({
 
         return <>
             <div key={field.name} className={`col-${field.className || 'sm-12'} my-2`}>
-                <label htmlFor={field.name} className="form-label">
+                <label htmlFor={field.name} className="block text-lg font-medium text-gray-700">
                     {field.label}
                 </label>
                 <Controller
@@ -147,7 +148,7 @@ const DynamicForm = <T extends FieldValues>({
                                     <input
                                         {...controllerField}
                                         type={field.type}
-                                        className={field.className || ""}
+                                        className={`${field.className}${errors[field.name] ? field.errorClass : ""}`}
                                         placeholder={field.placeholder}
                                         id={field.name}
                                     />
