@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Login from "./components/Login"
 import Register from "./components/Register"
@@ -20,21 +19,5 @@ const App = () => {
     </BrowserRouter>
   </>
 }
-=======
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import ProductForm from './components/ProductForm';
 
-
-const App = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<ProductForm />} />
-    </Routes>
-  );
-};
-
-export default App;
-
->>>>>>> b813c898b568045ca06a335e65933e0b28bc1ffc
-
+export default App
