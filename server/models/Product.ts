@@ -1,6 +1,10 @@
 import mongoose, { Model, Schema } from "mongoose"
 
+<<<<<<< HEAD
 export interface IProduct {
+=======
+export interface IProduct extends Document {
+>>>>>>> b813c898b568045ca06a335e65933e0b28bc1ffc
     name: string
     price: string
     desc: string

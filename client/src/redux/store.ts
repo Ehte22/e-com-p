@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+<<<<<<< HEAD
 import { cartApi } from "./api/cartApi";
 import authSlice from "./slices/authSlice";
 import { orderApi } from "./api/orderApi";
@@ -21,6 +22,16 @@ const reduxStore = configureStore({
             authApi.middleware,
             productApi.middleware
         ),
+=======
+import { productApi } from "./api/productApi";
+
+const reduxStore = configureStore({
+    reducer: {
+        [productApi.reducerPath]: productApi.reducer,
+    },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(productApi.middleware,)
+>>>>>>> b813c898b568045ca06a335e65933e0b28bc1ffc
 })
 
 export type RootState = ReturnType<typeof reduxStore.getState>

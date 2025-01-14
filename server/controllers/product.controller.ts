@@ -1,11 +1,22 @@
 import { Request, Response } from "express"
 import asyncHandler from "express-async-handler"
+<<<<<<< HEAD
 import { Product } from "../models/Product"
 import uploadProduct from "../utils/uploadProduct"
 import cloudinary from "../utils/uploadConfig"
 
 export const addProduct = asyncHandler(async (req: Request, res: Response): Promise<any> => {
     uploadProduct(req, res, async (err: any) => {
+=======
+// import cloudinary from "../utils/uploadConfig"
+import { Product } from "../models/Product"
+import { upload } from "../utils/upload"
+import cloudinary from "../utils/cloudinary.config"
+// import cloudinary from "cloudinary"
+
+export const addProduct = asyncHandler(async (req: Request, res: Response): Promise<any> => {
+    upload(req, res, async (err: any) => {
+>>>>>>> b813c898b568045ca06a335e65933e0b28bc1ffc
 
         if (err) {
             return res.status(400).json({ message: err.message || 'Upload error' })
@@ -34,7 +45,11 @@ export const getProductById = asyncHandler(async (req: Request, res: Response): 
 })
 
 export const updateProduct = asyncHandler(async (req: Request, res: Response): Promise<any> => {
+<<<<<<< HEAD
     uploadProduct(req, res, async (err: any) => {
+=======
+    upload(req, res, async (err: any) => {
+>>>>>>> b813c898b568045ca06a335e65933e0b28bc1ffc
 
         if (err) {
             return res.status(400).json({ message: err.message || 'Upload error' })
@@ -80,4 +95,8 @@ export const deleteProduct = asyncHandler(async (req: Request, res: Response): P
 
     await Product.findByIdAndDelete(id)
     res.status(200).json({ message: 'User Delete Successfully' })
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> b813c898b568045ca06a335e65933e0b28bc1ffc
