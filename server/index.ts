@@ -2,7 +2,13 @@ import express, { NextFunction, Request, Response } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+
+import authrouter from "./routes/auth.routes";
+import orderrouter from "./routes/order.routes";
+import cartrouter from "./routes/cart.routes";
+
 import PRODUCT_ROUTER from "./routes/product.routes";
+
 
 dotenv.config();
 
@@ -15,10 +21,11 @@ app.use(cors({
     credentials: true
 }));
 
-app.use("/api/v1/auth");
+app.use("/api/v1/auth", authrouter);
+app.use("/api/v1/order", orderrouter);
 app.use("/api/v1/product", PRODUCT_ROUTER);
-app.use("/api/v1/cart");
-app.use("/api/v1/order");
+app.use("/api/v1/cart", cartrouter);
+
 
 // 404 Handler
 app.use("*", (req: Request, res: Response) => {
