@@ -2,6 +2,7 @@ import express, { NextFunction, Request, Response } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import authrouter from "./routes/auth.routes";
 
 dotenv.config();
 
@@ -14,10 +15,10 @@ app.use(cors({
     credentials: true
 }));
 
-app.use("/api/v1/auth");
-app.use("/api/v1/product");
-app.use("/api/v1/cart");
-app.use("/api/v1/order");
+app.use("/api/v1/auth", authrouter);
+// app.use("/api/v1/product");
+// app.use("/api/v1/cart");
+// app.use("/api/v1/order");
 
 // 404 Handler
 app.use("*", (req: Request, res: Response) => {
