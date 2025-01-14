@@ -2,6 +2,7 @@ import express, { NextFunction, Request, Response } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import PRODUCT_ROUTER from "./routes/product.routes";
 
 dotenv.config();
 
@@ -15,7 +16,7 @@ app.use(cors({
 }));
 
 app.use("/api/v1/auth");
-app.use("/api/v1/product");
+app.use("/api/v1/product", PRODUCT_ROUTER);
 app.use("/api/v1/cart");
 app.use("/api/v1/order");
 
