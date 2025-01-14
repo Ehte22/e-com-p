@@ -8,7 +8,7 @@ import reduxStore from './redux/store.ts'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={reduxStore}>
-    <App />
+      <App />
     </Provider>
   </StrictMode>,
 )
