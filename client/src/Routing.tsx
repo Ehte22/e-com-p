@@ -6,7 +6,6 @@ import Hero from "./pages/Hero"
 import Product from "./pages/Product"
 import ProductDetail from "./DesignCompo/ProductDetail"
 import React from "react"
-import Cart from "./DesignCompo/Cart"
 import Checkout from "./DesignCompo/Checkout"
 import ConfirmationSuccess from "./DesignCompo/ConfirmationSuccess"
 import NotFound from "./DesignCompo/NotFound"
@@ -26,7 +25,6 @@ const Routing: React.FC = () => {
                     <Route path='/navbar' element={<Navbar />} />
                     <Route path='/details/:id' element={<ProductDetail />} />
                     <Route path='/product' element={<Product />} />
-                    <Route path='/cart' element={<Cart />} />
                     <Route path='/checkout' element={<Checkout />} />
                     <Route path='/footer' element={<Footer />} />
                     <Route path='/profile' element={<UserProfile />} />
