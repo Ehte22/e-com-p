@@ -23,13 +23,13 @@ const Routing: React.FC = () => {
                     <Route path='/' element={<Hero />} />
                     <Route path='/home' element={<Home />} />
                     <Route path='/navbar' element={<Navbar />} />
-                    <Route path='/details/:id' element={<ProductDetail />} />
                     <Route path='/product' element={<Product />} />
+                    <Route path='/details/:id' element={<ProductDetail />} />
                     <Route path='/checkout' element={<Checkout />} />
-                    <Route path='/footer' element={<Footer />} />
                     <Route path='/profile' element={<UserProfile />} />
-                    <Route path='/categories' element={<Categories />} />
+                    <Route path='/footer' element={<Footer />} />
                     <Route path='/confirmation' element={<ConfirmationSuccess />} />
+                    <Route path='/categories' element={<Categories />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
             </BrowserRouter>
