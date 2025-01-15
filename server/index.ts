@@ -2,6 +2,7 @@ import express, { NextFunction, Request, Response } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import router from "./routes/product.routes";
 
 import authrouter from "./routes/auth.routes";
 import orderrouter from "./routes/order.routes";
@@ -20,6 +21,7 @@ app.use(cors({
     origin: true,
     credentials: true
 }));
+
 
 app.use("/api/v1/auth", authrouter);
 app.use("/api/v1/order", orderrouter);

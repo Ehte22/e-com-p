@@ -1,8 +1,8 @@
 import { Request, Response } from "express"
 import asyncHandler from "express-async-handler"
-import { Product } from "../models/Product"
 import uploadProduct from "../utils/uploadProduct"
 import cloudinary from "../utils/uploadConfig"
+import { Product } from "../models/Product"
 
 export const addProduct = asyncHandler(async (req: Request, res: Response): Promise<any> => {
     uploadProduct(req, res, async (err: any) => {
