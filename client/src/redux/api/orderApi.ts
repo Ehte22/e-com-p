@@ -3,11 +3,11 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 export const orderApi = createApi({
     reducerPath: "orderApi",
     baseQuery: fetchBaseQuery({
-         baseUrl: `${import.meta.env.VITE_BACKEND_URL}/order`, 
-           prepareHeaders:()=>{
+        baseUrl: `${import.meta.env.VITE_BACKEND_URL}/order`,
+        prepareHeaders: () => {
 
-           } 
-        }),
+        }
+    }),
     tagTypes: ["cart"],
     endpoints: (builder) => {
         return {
@@ -18,8 +18,8 @@ export const orderApi = createApi({
                         method: "GET"
                     }
                 },
-                transformResponse:(data:any) =>{
-                   return data.result
+                transformResponse: (data: any) => {
+                    return data.result
                 },
                 providesTags: ["cart"]
             }),
@@ -43,8 +43,8 @@ export const orderApi = createApi({
                 },
                 invalidatesTags: ["cart"]
             }),
-            
-        
+
+
         }
     }
 })

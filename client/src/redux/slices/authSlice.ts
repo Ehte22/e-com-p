@@ -17,12 +17,12 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    .addMatcher(authApi.endpoints.login.matchFulfilled, (state, action: PayloadAction<string>) => {
-      state.user = action.payload;
-    })
-    .addMatcher(authApi.endpoints.logout.matchFulfilled, (state) => {
-      state.user = null;
-    });
+      .addMatcher(authApi.endpoints.login.matchFulfilled, (state, action: PayloadAction<string>) => {
+        state.user = action.payload;
+      })
+      .addMatcher(authApi.endpoints.logout.matchFulfilled, (state) => {
+        state.user = null;
+      });
   },
 });
 
