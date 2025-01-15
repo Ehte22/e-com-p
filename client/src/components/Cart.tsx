@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import { useGetAllCartsQuery } from '../redux/api/cartApi';
-
 interface CartItem {
   id: number;
   name: string;
@@ -10,8 +8,8 @@ interface CartItem {
 }
 
 const Cart: React.FC = () => {
-// const {user}= useSelector<RootState>(state => state.auth)
-//  const {data}= useGetAllCartsQuery("")
+  // const {user}= useSelector<RootState>(state => state.auth)
+  //  const {data}= useGetAllCartsQuery("")
   const [cartItems, setCartItems] = useState<CartItem[]>([
     { id: 1, name: 'Product 1', price: 10, quantity: 1 },
     { id: 2, name: 'Product 2', price: 20, quantity: 1 },
